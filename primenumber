@@ -1,0 +1,52 @@
+package jaisan;
+
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class primenumber {
+public static void main(String args[]) {
+			int Prime=2;
+			while(true) {
+				System.out.print("Whould you like to see next prime number.Enter yes or no ");
+				Scanner sc=new Scanner(System.in);
+				String yes=sc.next();
+				if(yes.equals("yes")) {
+					Prime=findPrime(Prime);
+					System.out.println("Current prime number:"+ Prime);
+				}
+				else{
+					break;
+				}}
+	}
+		public static boolean isPrime(int number) {
+			int count=0;
+			if(number==2) 
+				return true;
+			if(number%2==0)
+				return false;
+			for(int i=3;i<number;i++) {
+				if(number%i==0) {
+					count++;
+				}
+			}
+			if(count>=1)
+				return false;
+			return true;
+		}
+		
+		public static int findPrime(int currentPrime) {
+			
+			int newPrime=currentPrime+1;
+			while(true)
+				if(isPrime(newPrime)==false)
+					newPrime++;
+				else break;
+			return newPrime;
+		}
+		
+		
+		
+}
